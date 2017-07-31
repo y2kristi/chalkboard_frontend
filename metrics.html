@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>242Chalkboard | Report Card</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="wrapper">
+      <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+          <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+              <div class="dropdown profile-element">
+                <span>
+                <img alt="image" width=100% src="img/sprite.png" />
+                </span>
+              </div>
+              <div class="logo-element">
+                242
+              </div>
+            </li>
+            <li>
+              <a href="dashboard_2.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> </a>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-pie-chart"></i> <span class="nav-label">Mathematics</span><span class="fa pie-chart"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="mathematics_table_basic.html">Modules</a></li>
+                <li class="#"><a href="mathematics_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-flask"></i> <span class="nav-label">Chemistry</span><span class="fa flask"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="chemistry_table_basic.html">Modules</a></li>
+                <li class="#"><a href="chemistry_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-heartbeat"></i> <span class="nav-label">Biology</span><span class="fa heartbeat"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="biology_table_basic.html">Modules</a></li>
+                <li class="#"><a href="biology_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-cogs"></i> <span class="nav-label">Physics</span><span class="fa cogs"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="physics_table_basic.html">Modules</a></li>
+                <li class="#"><a href="physics_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li class="active">
+              <a href="metrics.html"><i class="fa fa-bar-chart"></i> <span class="nav-label">Report Card</span><span class="fa user"></span></a>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-user"></i> <span class="nav-label">Profile</span><span class="fa user"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="student-profile"><a href="student_profile.html">View Profile</a></li>
+                <li class="student-edit-profile"><a href="edit_student_profile.html">Edit Profile </a></li>
+                <li class="#"><a href="account.html">Account Details</a></li>
+              </ul>
+            </li>
+            <li>
+                <a href="index.html" class="student-logout"><i class="fa fa-sign-out"></i> <span class="nav-label">Sign Out</span><span class="fa user"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                </li>
+            </ul>
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-9">
+                    <h2>Report Card</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="active">
+                            <strong>Report Card</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Mathematics Modules</h5>
+                                <h2 id = "math_mod"></h2>
+                                <div class="text-center">
+                                    <div id="sparkline5"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Mathematics Exams</h5>
+                                <h2 id = "math_exam"></h2>
+                                <div class="text-center">
+                                    <div id="sparkline6"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Top Areas</h5>
+                                <table class="table table-stripped small m-t-md">
+                                    <tbody id = "good_math">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Development Areas</h5>
+                                <table class="table table-stripped small m-t-md">
+                                    <tbody id = "bad_math">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Physics Modules</h5>
+                                <h2 id = "phys_mod"></h2>
+                                <div class="text-center">
+                                    <div id="sparkline7"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Physics Exams</h5>
+                                <h2 id = "phys_exam"></h2>
+                                <div class="text-center">
+                                    <div id="sparkline8"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Top Areas</h5>
+                                <table class="table table-stripped small m-t-md">
+                                    <tbody id = "good_phys">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Development Areas</h5>
+                                <table class="table table-stripped small m-t-md">
+                                    <tbody id = "bad_phys">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Chemistry Modules</h5>
+                                <h2 id = "chem_mod"></h2>
+                                <div class="text-center">
+                                    <div id="sparkline9"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Chemistry Exams</h5>
+                                <h2 id = "chem_exam"></h2>
+                                <div class="text-center">
+                                    <div id="sparkline10"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Top Areas</h5>
+                                <table class="table table-stripped small m-t-md">
+                                    <tbody id="good_chem">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Development Areas</h5>
+                                <table class="table table-stripped small m-t-md">
+                                    <tbody id = "bad_chem">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Biology Modules</h5>
+                                <h2 id = "bio_mod"></h2>
+                                <div class="text-center">
+                                    <div id="sparkline11"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Biology Exams</h5>
+                                <h2 id = "bio_exam"></h2>
+                                <div class="text-center">
+                                    <div id="sparkline12"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Top Areas</h5>
+                                <table class="table table-stripped small m-t-md">
+                                    <tbody id="good_bio">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <h5>Development Areas</h5>
+                                <table class="table table-stripped small m-t-md">
+                                    <tbody id="bad_bio">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        <div class="footer">
+          <div class="pull-right">
+          </div>
+          <div>
+            Copyright <strong>242Chalkboard</strong> &copy; 2017
+          </div>
+        </div>
+        </div>
+
+    </div>
+    <div class="modal fade" id="authentication_message" role="dialog"  data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Authentication</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please sign in to continue!</p>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-primary" id="to-continue">Sign In</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <script src="js/chalkboard_script.js"></script>
+    <script src="js/authentication.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+
+        $.ajax({
+        url: "http://138.197.44.69:3000/api/v1/results",
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+                'Authorization': localStorage.activation_token
+            },
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+		console.log(data);
+
+		for (var i = 0; i < data.top_math.length; i++) {
+			$("#good_math").append('<tr><td class="no-borders"><i class="fa fa-check text-navy"></i></td><td class="no-borders">' + data.top_math[i][0] + '</td></tr>');
+		}
+                for (var i = 0; i < data.top_math_no.length; i++) {
+                        $("#bad_math").append('<tr><td class="no-borders"><i class="fa fa-times text-danger"></i></td><td class="no-borders">' + data.top_math_no[i][0] + '</td></tr>');
+                }
+
+               for (var i = 0; i < data.top_bio.length; i++) {
+                        $("#good_bio").append('<tr><td class="no-borders"><i class="fa fa-check text-navy"></i></td><td class="no-borders">' + data.top_bio[i][0] + '</td></tr>');
+                }
+                for (var i = 0; i < data.top_bio_no.length; i++) {
+                        $("#bad_bio").append('<tr><td class="no-borders"><i class="fa fa-times text-danger"></i></td><td class="no-borders">' + data.top_bio_no[i][0] + '</td></tr>');
+                }
+
+               for (var i = 0; i < data.top_chem.length; i++) {
+                        $("#good_chem").append('<tr><td class="no-borders"><i class="fa fa-check text-navy"></i></td><td class="no-borders">' + data.top_chem[i][0] + '</td></tr>');
+                }
+                for (var i = 0; i < data.top_chem_no.length; i++) {
+                        $("#bad_chem").append('<tr><td class="no-borders"><i class="fa fa-times text-danger"></i></td><td class="no-borders">' + data.top_chem_no[i][0] + '</td></tr>');
+                }
+
+               for (var i = 0; i < data.top_phys.length; i++) {
+                        $("#good_phys").append('<tr><td class="no-borders"><i class="fa fa-check text-navy"></i></td><td class="no-borders">' + data.top_phys[i][0] + '</td></tr>');
+                }
+                for (var i = 0; i < data.top_phys_no.length; i++) {
+                        $("#bad_phys").append('<tr><td class="no-borders"><i class="fa fa-times text-danger"></i></td><td class="no-borders">' + data.top_phys_no[i][0] + '</td></tr>');
+                }
+
+
+            	var sparklineCharts = function(){
+		
+		$("#math_mod").html(data.math_correct_module + "/" +  data.math_total_module)
+		$("#phys_mod").html(data.phys_correct_module + "/" +  data.phys_total_module)
+		$("#bio_mod").html(data.bio_correct_module + "/" +  data.bio_total_module)
+		$("#chem_mod").html(data.chem_correct_module + "/" +  data.chem_total_module)
+		$("#math_exam").html(data.math_correct_exam + "/" +  data.math_total_exam)
+		$("#phys_exam").html(data.phys_correct_exam + "/" + data.phys_total_exam)
+		$("#bio_exam").html(data.bio_correct_exam + "/" +  data.bio_total_exam)
+		$("#chem_exam").html(data.chem_correct_exam + "/" + data.chem_total_exam)
+
+                 $("#sparkline5").sparkline([data.math_correct_module, data.math_total_module], {
+                     type: 'pie',
+                     height: '140',
+                     sliceColors: ['#1ab394', '#F5F5F5']
+                 });
+
+                 $("#sparkline6").sparkline([data.math_correct_exam, data.math_total_exam], {
+                     type: 'pie',
+                     height: '140',
+                     sliceColors: ['#2E64FE', '#F5F5F5']
+                 });
+
+                 $("#sparkline7").sparkline([data.phys_correct_module, data.phys_total_module], {
+                     type: 'pie',
+                     height: '140',
+                     sliceColors: ['#1ab394', '#F5F5F5']
+                 });
+
+                 $("#sparkline8").sparkline([data.phys_correct_exam, data.phys_total_exam], {
+                     type: 'pie',
+                     height: '140',
+                     sliceColors: ['#2E64FE', '#F5F5F5']
+                 });
+                $("#sparkline9").sparkline([data.chem_correct_module, data.chem_total_module], {
+                     type: 'pie',
+                     height: '140',
+                     sliceColors: ['#1ab394', '#F5F5F5']
+                 });
+                $("#sparkline10").sparkline([data.chem_correct_exam, data.chem_total_exam], {
+                     type: 'pie',
+                     height: '140',
+                     sliceColors: ['#2E64FE', '#F5F5F5']
+                 });
+                $("#sparkline11").sparkline([data.bio_correct_module, data.bio_total_module], {
+                     type: 'pie',
+                     height: '140',
+                     sliceColors: ['#1ab394', '#F5F5F5']
+                 });
+                $("#sparkline12").sparkline([data.bio_correct_exam, data.bio_total_exam], {
+                     type: 'pie',
+                     height: '140',
+                     sliceColors: ['#2E64FE', '#F5F5F5']
+                 });                                                                    
+            };
+
+            var sparkResize;
+
+            $(window).resize(function(e) {
+                clearTimeout(sparkResize);
+                sparkResize = setTimeout(sparklineCharts, 500);
+            });
+
+            sparklineCharts();
+
+	}
+	});
+
+        });
+    </script>
+</body>
+</html>

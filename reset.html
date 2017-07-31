@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>242Chalkboard | Register</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body class="gray-bg">
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+      <div>
+        <div><img src="img/sprite-2.png" height=70px width=250px>
+        </div>
+        <p>Reset your password!</p>
+        <form class="m-t" role="form" id= "reset-pass">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Email Address" required="" id= "email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Temporary Password" required="" id="pass">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="New Password" required="" id= "new-pass">
+          </div>
+          <div class="form-group">
+          </div>
+                            <div class="alert alert-danger" id="email-not">
+                                Uh Oh! Something's not right, try again.
+                            </div>
+
+          <button type="submit" id="reset" class="btn btn-primary block full-width m-b">Reset Password</button>
+          <p class="text-muted text-center"><small>Do not have an account?</small></p>
+          <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a>
+
+        </form>
+        <p class="m-t"> <small>242Chalkboard &copy; 2017</small> </p>
+      </div>
+    </div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script src="js/chalkboard_script.js"></script>
+    
+    <script>
+      $(document).ready(function(){
+
+  $("#email-not").hide();
+  $("#reset").click(function(){
+    var email = $("#email").val();
+    var pass = $("#pass").val();
+    var pwd = $("#new-pass").val();
+    $.ajax({
+      type: 'POST',
+      url: 'http://138.197.44.69:3000/api/v1/resets',
+      data: { id: email, tmp: pass, pwd: pwd},
+      success:function(data) {
+	console.log(data);
+        if (data["status"] != "failed")
+        {
+                window.location.href = "index.html"
+        }
+        else
+        {
+                $("#email-not").show();
+        }
+      }
+    });
+     return false;
+  });
+      });
+    </script>
+  </body>
+</html>

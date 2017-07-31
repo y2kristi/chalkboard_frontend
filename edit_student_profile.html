@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>242Chalkboard | Edit Student Profile</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper">
+      <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+          <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+              <div class="dropdown profile-element">
+                <span>
+                <img alt="image" width=100% src="img/sprite.png" />
+                </span>
+              </div>
+              <div class="logo-element">
+                242
+              </div>
+            </li>
+            <li>
+              <a href="dashboard_2.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> </a>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-pie-chart"></i> <span class="nav-label">Mathematics</span><span class="fa pie-chart"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="mathematics_table_basic.html">Modules</a></li>
+                <li class="#"><a href="mathematics_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-flask"></i> <span class="nav-label">Chemistry</span><span class="fa flask"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="chemistry_table_basic.html">Modules</a></li>
+                <li class="#"><a href="chemistry_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-heartbeat"></i> <span class="nav-label">Biology</span><span class="fa heartbeat"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="biology_table_basic.html">Modules</a></li>
+                <li class="#"><a href="biology_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-cogs"></i> <span class="nav-label">Physics</span><span class="fa cogs"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="physics_table_basic.html">Modules</a></li>
+                <li class="#"><a href="physics_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="metrics.html"><i class="fa fa-bar-chart"></i> <span class="nav-label">Report Card</span><span class="fa user"></span></a>
+            </li>
+            <li class="active">
+              <a href="#" class="stop-double-tap"><i class="fa fa-user"></i> <span class="nav-label">Profile</span><span class="fa user"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="student-profile"><a href="student_profile.html">View Profile</a></li>
+                <li class="student-edit-profile"><a href="edit_student_profile.html">Edit Profile </a></li>
+                <li class="#"><a href="account.html">Account Details</a></li>
+              </ul>
+            </li>
+            <li>
+                <a href="index.html" class="student-logout"><i class="fa fa-sign-out"></i> <span class="nav-label">Sign Out</span><span class="fa user"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                </li>
+            </ul>
+        </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+          <div class="col-lg-10">
+            <h2>Edit Profile</h2>
+            <ol class="breadcrumb">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a>Profile</a>
+              </li>
+              <li class="active">
+                <strong>Edit My Profile</strong>
+              </li>
+            </ol>
+          </div>
+          <div class="col-lg-2">
+          </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+          <div class="row">
+            
+            <div class="col-lg-5">
+              <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                  <h5>Edit Profile</h5>
+                </div>
+                <div class="ibox-content">
+                  <form class="form-horizontal" id= "edit-student-form" name= "edit-student-from">
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label">Email</label>
+                      <div class="col-lg-10"><input type="email" placeholder="Email" class="form-control student_edit_email"  name= "student-email"> 
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label">Nickname</label>
+                      <div class="col-lg-10"><input type="text" placeholder="nickname" class="form-control student_edit_nickname" name= "student-nickname"> 
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="col-lg-2 control-label">First Name</label>
+                      <div class="col-lg-10"><input type="text" placeholder="First Name" class="form-control student_edit_first"> 
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="col-lg-2 control-label">Last Name</label>
+                      <div class="col-lg-10"><input type="text" placeholder="Last Name" class="form-control student_edit_last"> 
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="col-lg-2 control-label">Age</label>
+                      <div class="col-lg-10"><input type="text" placeholder="Age" class="form-control student_edit_age"> 
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="col-lg-2 control-label">School</label>
+                      <div class="col-lg-10"> 
+
+<select id="student_school" class="form-control student_edit_school">
+<option selected="selected" value="Abaco Central High">Abaco Central High</option>
+<option value="Abraham&#39;s Bay High">Abraham&#39;s Bay High</option>
+<option value="Acklins Central High">Acklins Central High</option>
+<option value="Agape Christian All Age">Agape Christian All Age</option>
+<option value="Alpha Omega Christian">Alpha Omega Christian</option>
+<option value="Aquinas College">Aquinas College</option>
+<option value="Arhtur&#39;s Town High">Arhtur&#39;s Town High</option>
+<option value="Bahamas Academy">Bahamas Academy</option>
+<option value="Bimini All Age">Bimini All Age</option>
+<option value="Bishop Michael Eldon">Bishop Michael Eldon</option>
+<option value="Black Point All Age">Black Point All Age</option>
+<option value="Blairwood Academy">Blairwood Academy</option>
+<option value="C.C. Sweeting">C.C. Sweeting</option>
+<option value="C.I. Gibson Senior">C.I. Gibson Senior</option>
+<option value="C.R. Walker Senior">C.R. Walker Senior</option>
+<option value="C.V. Bethel Senior">C.V. Bethel Senior</option>
+<option value="Calvary Academy">Calvary Academy</option>
+<option value="Central Andros High">Central Andros High</option>
+<option value="Central Eleuthera High">Central Eleuthera High</option>
+<option value="Crooked Island High">Crooked Island High</option>
+<option value="Doris Johnson Senior">Doris Johnson Senior</option>
+<option value="Eight Mile Rock High">Eight Mile Rock High</option>
+<option value="Faith Temple Christian Academy">Faith Temple Christian Academy</option>
+<option value="Farmer&#39;s Cay All Age">Farmer&#39;s Cay All Age</option>
+<option value="Freeport Gospel Chapel">Freeport Gospel Chapel</option>
+<option value="Galilee Academy">Galilee Academy</option>
+<option value="Gateway Christian Academy">Gateway Christian Academy</option>
+<option value="Government High">Government High</option>
+<option value="Grand Bahama Academy">Grand Bahama Academy</option>
+<option value="Grand Bahama Catholic">Grand Bahama Catholic</option>
+<option value="Grand Cay All Age">Grand Cay All Age</option>
+<option value="Harbour Island All Age">Harbour Island All Age</option>
+<option value="Holy Name Catholic">Holy Name Catholic</option>
+<option value="Inagua All Age">Inagua All Age</option>
+<option value="Jack Hayward High">Jack Hayward High</option>
+<option value="Jordan Prince William">Jordan Prince William</option>
+<option value="Kingsway Academy">Kingsway Academy</option>
+<option value="L.N. Coakley High">L.N. Coakley High</option>
+<option value="Long Cay All Age">Long Cay All Age</option>
+<option value="Lucaya International">Lucaya International</option>
+<option value="Lyford Cay">Lyford Cay</option>
+<option value="Magrove Cay High">Magrove Cay High</option>
+<option value="Man-O-War Cay All Age">Man-O-War Cay All Age</option>
+<option value="Mary E Albury High">Mary E Albury High</option>
+<option value="Moores Island All Age">Moores Island All Age</option>
+<option value="Mt Caramel Preparatory Academy">Mt Caramel Preparatory Academy</option>
+<option value="N.G.M Major High">N.G.M Major High</option>
+<option value="Nassau Christian Academy">Nassau Christian Academy</option>
+<option value="North Andros High">North Andros High</option>
+<option value="North Eleuthera High">North Eleuthera High</option>
+<option value="North Long Island High">North Long Island High</option>
+<option value="Old Bight High">Old Bight High</option>
+<option value="Preston Albury High">Preston Albury High</option>
+<option value="R.M. Bailey Senior">R.M. Bailey Senior</option>
+<option value="R.N. Gomez All Age">R.N. Gomez All Age</option>
+<option value="Ragged Island All Age">Ragged Island All Age</option>
+<option value="Rum Cay All Age">Rum Cay All Age</option>
+<option value="San Salvador High">San Salvador High</option>
+<option value="Sherlin Bootle High">Sherlin Bootle High</option>
+<option value="Sound Andros High">Sound Andros High</option>
+<option value="Spanish Wells All Age">Spanish Wells All Age</option>
+<option value="St Andrews Anglican">St Andrews Anglican</option>
+<option value="St Andrews School">St Andrews School</option>
+<option value="St Anne&#39;s Catholic">St Anne&#39;s Catholic</option>
+<option value="St Anne&#39;s School">St Anne&#39;s School</option>
+<option value="St Augustine&#39;s College">St Augustine&#39;s College</option>
+<option value="St Francis De Sales All Age">St Francis De Sales All Age</option>
+<option value="St George&#39;s High">St George&#39;s High</option>
+<option value="St John&#39;s College">St John&#39;s College</option>
+<option value="St Paul&#39;s Methodist College">St Paul&#39;s Methodist College</option>
+<option value="St Vincent de Paul">St Vincent de Paul</option>
+<option value="Staniel Cay All Age">Staniel Cay All Age</option>
+<option value="Sunland Baptist Academy">Sunland Baptist Academy</option>
+<option value="Sweeting&#39;s Cay All Age">Sweeting&#39;s Cay All Age</option>
+<option value="Tabernacle Christian Academy">Tabernacle Christian Academy</option>
+<option value="Tambearly">Tambearly</option>
+<option value="The Dunmore School">The Dunmore School</option>
+<option value="The Island School">The Island School</option>
+<option value="Wesley College">Wesley College</option>
+<option value="Westminster College">Westminster College</option>
+<option value="Windermore High">Windermore High</option></select>
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="col-lg-2 control-label">Grade</label>
+                      <div class="col-lg-10"><input type="text" placeholder="Grade" class="form-control student_edit_grade"> 
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="col-lg-2 control-label">Island</label>
+                      <div class="col-lg-10"><input type="text" placeholder="Island" class="form-control student_edit_island "> 
+                      </div>
+                    </div> 
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label">Gender</label>
+                      <div class="col-lg-10"><input type="text" placeholder="Gender" class="form-control student_edit_gender"> 
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn btn-w-m btn-primary" type="submit">Update</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="pull-right">
+          </div>
+          <div>
+            Copyright <strong>242Chalkboard</strong> &copy; 2017
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="authentication_message" role="dialog"  data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Authentication</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please sign in to continue!</p>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-primary" id="to-continue">Sign In</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/chalkboard_script.js"></script>
+    <script src="js/authentication.js"></script>
+    <script>
+      $(document).ready(function () {
+          $('.i-checks').iCheck({
+              checkboxClass: 'icheckbox_square-green',
+              radioClass: 'iradio_square-green',
+          });
+
+
+      });
+    </script>
+  </body>
+</html>

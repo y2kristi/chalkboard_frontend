@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>242Chalkboard | Exams</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+		<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+      <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+          <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+              <div class="dropdown profile-element">
+                <span>
+                <img alt="image" width=100% src="img/sprite.png" />
+                </span>
+              </div>
+              <div class="logo-element">
+                242
+              </div>
+            </li>
+            <li>
+              <a href="dashboard_2.html" class="stop-double-tap"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> </a>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-pie-chart"></i> <span class="nav-label">Mathematics</span><span class="fa pie-chart"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="mathematics_table_basic.html" class="stop-double-tap">Modules</a></li>
+                <li class="#"><a href="mathematics_table_basic_test.html" class="stop-double-tap">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-flask"></i> <span class="nav-label">Chemistry</span><span class="fa flask"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="chemistry_table_basic.html" class="stop-double-tap">Modules</a></li>
+                <li class="#"><a href="chemistry_table_basic_test.html" class="stop-double-tap">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-heartbeat"></i> <span class="nav-label">Biology</span><span class="fa heartbeat"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="biology_table_basic.html">Modules</a></li>
+                <li class="#"><a href="biology_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-cogs"></i> <span class="nav-label">Physics</span><span class="fa cogs"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="#"><a href="physics_table_basic.html">Modules</a></li>
+                <li class="#"><a href="physics_table_basic_test.html">Exams </a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="metrics.html"><i class="fa fa-bar-chart"></i> <span class="nav-label">Reports</span><span class="fa user"></span></a>
+            </li>
+            <li>
+              <a href="#" class="stop-double-tap"><i class="fa fa-user"></i> <span class="nav-label">Profile</span><span class="fa user"></span></a>
+              <ul class="nav nav-second-level collapse">
+                <li class="student-profile"><a href="student_profile.html">View Profile</a></li>
+                <li class="student-edit-profile"><a href="edit_student_profile.html">Edit Profile </a></li>
+              </ul>
+            </li>
+            <li>
+                <a href="index.html" class="student-logout"><i class="fa fa-sign-out"></i> <span class="nav-label">Sign Out</span><span class="fa user"></span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                </li>
+            </ul>
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-9">
+                    <h2>Modules</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" id="wid_sub" style="text-transform:capitalize;"></a>
+                        </li>
+                        <li class="active">
+                            <strong id="mod_name" style="text-transform:capitalize;"></strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="widget style1 lazur-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-pencil fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> Question Number </span>
+                            <h2 class="font-bold" id="question_number"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget style1 lazur-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-list fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> Number of Questions </span>
+                            <h2 class="font-bold" id="total_question"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget style1 yellow-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-envelope-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> Time Elapsed </span>
+			    <h2 class="font-bold" id = "seconds"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget style1 navy-bg">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <i class="fa fa-music fa-5x"></i>
+                        </div>
+                        <div class="col-xs-8 text-right">
+                            <span> Time Alloted </span>
+                            <h2 class="font-bold" id = 'alot'></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5 id='title'></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                        </ul>
+                        <a class="close-link">
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                		<!--<div class="alert alert-success" id ="good">
+                  		Great Job! <i class="fa fa-smile-o"></i>
+                  	</div>
+                 		<div class="alert alert-danger" id="bad">
+                  		Oops, try again. <i class="fa fa-frown-o"></i>
+                  	</div>-->
+		    		<div class="row" id="location" style="font-size: 18px; padding-bottom:20px;"></div>
+				<div class="row" id="image_location" style="padding-bottom:20px;"></div>
+                    <div class="row" style="padding-bottom:20px;">
+                        <div class="col-lg-6" style="font-size:20px;" id="radio_group">
+                            <div class="i-checks" id = "div_option_a"><label id="option_a"> <input type="radio" value="choice_a" name="ans"><i></i> </label></div>
+                            <div class="i-checks" id = "div_option_b"><label id="option_b"> <input type="radio" value="choice_b" name="ans"><i></i> </label></div>
+                            <div class="i-checks" id = "div_option_c"><label id="option_c"> <input type="radio" value="choice_c" name="ans"><i></i> </label></div>
+                            <div class="i-checks" id = "div_option_d"><label id="option_d"> <input type="radio" value="choice_d" name="ans"><i></i> </label></div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-circle" type="button" id ="button-left"><i class="fa fa-arrow-left"></i></button>
+                    <button class="btn btn-primary btn-circle" type="button" id = "button-right"><i class="fa fa-arrow-right"></i></button>
+
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        </div>
+        <div class="footer">
+          <div class="pull-right">
+          </div>
+          <div>
+            Copyright <strong>242Chalkboard</strong> &copy; 2017
+          </div>
+        </div>
+
+        </div>
+        </div>
+    <div class="modal fade" id="authentication_message" role="dialog"  data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Authentication</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please sign in to continue!</p>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-primary" id="to-continue">Sign In</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/jquery-ui-1.10.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <script src="js/chalkboard_script.js"></script>
+    <script src="js/authentication.js"></script>
+
+<script>
+$(document).ready(function() {
+
+	var sec = 0;
+	function pad ( val ) { return val > 9 ? val : "0" + val; }
+		setInterval( function(){
+    		$("#seconds").html(pad(parseInt(sec/60,10)));
+    		$("#seconds").append(":");
+    		$("#seconds").append(pad(++sec%60));
+	}, 1000);
+
+	function GetURLParameter(sParam)
+	{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+    }
+	}
+	$("#good").hide();
+	$("#bad").hide();
+
+        var tit = localStorage.module_test_name //GetURLParameter('module_test_name');
+        var mod = localStorage.module_test //GetURLParameter('module_test');
+        var sub = localStorage.subject //GetURLParameter('subject');
+
+	$("#wid_sub").append(sub);
+	$("#mod_name").append(tit.replace(/%20/g, " "));
+	$('#title').append(tit.replace(/%20/g, " "));
+
+        $.ajax({
+        url: "http://138.197.44.69:3000/api/v1/questions/question_module/" + sub + "/" + mod + "/" + tit + "/1",
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+                'Authorization': localStorage.activation_token
+            },
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+
+	var answer_ret = data.question[0].answer;
+	
+	$("#total_question").html(data.total);
+	$("#question_number").html(data.question[0].number);
+
+	$('#location').append(data.question[0].question);
+
+	$('#alot').html(data.question[0].timer);
+
+        if (data.question[0].number == 1){
+                $("#button-left").prop("disabled",true);
+        }else{
+                $("#button-left").prop("disabled",false);
+        }
+
+        if (data.question[0].number == data.total){
+                $("#button-right").prop("disabled",true);
+        }else{                $("#button-right").prop("disabled",false);
+        }
+
+        if (data.image_url.search("NULL") == -1){
+                $('#image_location').html('<img src="http://138.197.44.69:3000' + data.image_url + '"/>');
+        }else{
+                $('#image_location').html("");
+        }
+
+        if (data.choice_a_image.search("NULL") == -1){
+                        $('#option_a').html('<input type="radio" value="choice_a" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_a_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_a == "" || data.question[0].choice_a == null ){
+                                $("#div_option_a").hide();
+                        }else{
+                                $("#div_option_a").show();
+                        	$('#option_a').html('<input type="radio" value="choice_a" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_a);
+                        }
+        
+        }
+        if (data.choice_b_image.search("NULL") == -1){
+                        $('#option_b').html('<input type="radio" value="choice_b" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_b_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_b == "" || data.question[0].choice_b == null ){
+                                $("#div_option_b").hide();
+                        }else{
+                                $("#div_option_b").show();
+                        	$('#option_b').html('<input type="radio" value="choice_b" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_b);
+                        }
+        
+        }
+        if (data.choice_c_image.search("NULL") == -1){
+                        $('#option_c').html('<input type="radio" value="choice_c" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_c_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_c == "" || data.question[0].choice_c == null ){
+                                $("#div_option_c").hide();
+                        }else{
+                                $("#div_option_c").show();
+                        	$('#option_c').html('<input type="radio" value="choice_c" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_c);
+                        }
+        
+        }
+        if (data.choice_d_image.search("NULL") == -1){
+                        $('#option_d').html('<input type="radio" value="choice_d" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_d_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_d == "" || data.question[0].choice_d == null ){
+                                $("#div_option_d").hide();
+                        }else{
+                                $("#div_option_d").show();
+                                $('#option_d').html('<input type="radio" value="choice_d" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_d);
+                        }
+        
+        }
+
+
+	MathJax.Hub.Queue(["Typeset", MathJax.Hub, "location"],["Typeset", MathJax.Hub, "radio_group"]);
+
+	$('input[type=radio][name=ans]').change(function() {
+		if (answer_ret == $("input[name='ans']:checked").val()){ $('#good').show(); $('#bad').hide();}
+		if (answer_ret != $("input[name='ans']:checked").val()){ $('#bad').show(); $('#good').hide();}	
+                $.ajax({
+                url: "http://138.197.44.69:3000/api/v1/results/student_guess/" + data.question[0].id + "/" + $("input[name='ans']:checked").val(),
+                headers: {"Authorization": localStorage.activation_token}
+                });
+	});
+
+	$( "#solution_view" ).click(function() {
+  	$('#location').html(data.question[0].solution);
+		MathJax.Hub.Queue(["Typeset", MathJax.Hub, "location"]);
+	});
+	}
+	
+	});
+
+  $( "#button-left" ).click( function() {
+      $("#bad").hide();
+      $("#good").hide();
+
+      var num = parseInt($("#question_number").text()) - 1;
+
+
+        $.ajax({
+        url: "http://138.197.44.69:3000/api/v1/questions/question_module/" + sub + "/" + mod + "/" + tit + "/" + num,
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+                'Authorization': localStorage.activation_token
+            },
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+      $("#question_number").html(data.question[0].number);
+
+        var answer_ret = data.question[0].answer;
+
+        $("#location").html(data.question[0].question);
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "location"]);
+
+
+        if (data.question[0].number == 1){
+                $("#button-left").prop("disabled",true);
+        }else{
+                $("#button-left").prop("disabled",false);
+        }
+
+        if (data.question[0].number == data.total){
+                $("#button-right").prop("disabled",true);
+        }else{                $("#button-right").prop("disabled",false);
+        }
+
+        if (data.image_url.search("NULL") == -1){
+                $('#image_location').html('<img src="http://138.197.44.69:3000' + data.image_url + '"/>');
+        }else{
+                $('#image_location').html("");
+        }
+
+        if (data.choice_a_image.search("NULL") == -1){
+                        $('#option_a').html('<input type="radio" value="choice_a" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_a_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_a == "" || data.question[0].choice_a == null ){
+                                $("#div_option_a").hide();
+                        }else{
+                                $("#div_option_a").show();
+                        	$('#option_a').html('<input type="radio" value="choice_a" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_a);
+                        }
+        
+        }
+        if (data.choice_b_image.search("NULL") == -1){
+                        $('#option_b').html('<input type="radio" value="choice_b" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_b_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_b == "" || data.question[0].choice_b == null ){
+                                $("#div_option_b").hide();
+                        }else{
+                                $("#div_option_b").show();
+                        	$('#option_b').html('<input type="radio" value="choice_b" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_b);
+                        }
+        
+        }
+        if (data.choice_c_image.search("NULL") == -1){
+                        $('#option_c').html('<input type="radio" value="choice_c" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_c_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_c == "" || data.question[0].choice_c == null ){
+                                $("#div_option_c").hide();
+                        }else{
+                                $("#div_option_c").show();
+                        	$('#option_c').html('<input type="radio" value="choice_c" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_c);
+                        }
+        
+        }
+        if (data.choice_d_image.search("NULL") == -1){
+                        $('#option_d').html('<input type="radio" value="choice_d" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_d_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_d == "" || data.question[0].choice_d == null ){
+                                $("#div_option_d").hide();
+                        }else{
+                                $("#div_option_d").show();
+                                $('#option_d').html('<input type="radio" value="choice_d" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_d);
+                        }
+        
+        }
+
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "radio_group"]);
+
+        $('input[type=radio][name=ans]').change(function() {
+          if (answer_ret == $("input[name='ans']:checked").val()){ $('#good').show(); $('#bad').hide();}
+          if (answer_ret != $("input[name='ans']:checked").val()){ $('#bad').show(); $('#good').hide();}  
+                $.ajax({
+                url: "http://138.197.44.69:3000/api/v1/results/student_guess/" + data.question[0].id + "/" + $("input[name='ans']:checked").val(),
+                headers: {"Authorization": localStorage.activation_token}
+                });
+        });
+
+        $( "#solution_view" ).click(function() {
+          $('#location').html(data.question[0].solution);
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub, "location"]);
+        });
+	}
+    });
+  });
+  $( "#button-right" ).click( function() {
+			$("#bad").hide();
+			$("#good").hide();
+
+			var num = parseInt($("#question_number").text()) + 1;
+        $.ajax({
+        url: "http://138.197.44.69:3000/api/v1/questions/question_module/" + sub + "/" + mod + "/" + tit + "/" + num,
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+                'Authorization': localStorage.activation_token
+            },
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+
+
+			$("#question_number").html(data.question[0].number);
+
+  			var answer_ret = data.question[0].answer;
+
+				$("#location").html(data.question[0].question);
+				MathJax.Hub.Queue(["Typeset", MathJax.Hub, "location"]);
+
+        if (data.question[0].number == 1){
+                $("#button-left").prop("disabled",true);
+        }else{
+                $("#button-left").prop("disabled",false);
+        }
+
+        if (data.question[0].number == data.total){
+                $("#button-right").prop("disabled",true);
+        }else{                $("#button-right").prop("disabled",false);
+        }
+
+        if (data.image_url.search("NULL") == -1){
+                $('#image_location').html('<img src="http://138.197.44.69:3000' + data.image_url + '"/>');
+        }else{
+                $('#image_location').html("");
+        }
+
+	if (data.choice_a_image.search("NULL") == -1){
+			$('#option_a').html('<input type="radio" value="choice_a" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_a_image + '"/>');
+
+	}else{
+                        if (data.question[0].choice_a == "" || data.question[0].choice_a == null ){
+                                $("#div_option_a").hide();
+                        }else{
+                                $("#div_option_a").show();
+				$('#option_a').html('<input type="radio" value="choice_a" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_a);
+                        }
+	
+	}
+        if (data.choice_b_image.search("NULL") == -1){
+                        $('#option_b').html('<input type="radio" value="choice_b" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_b_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_b == "" || data.question[0].choice_b == null ){
+                                $("#div_option_b").hide();
+                        }else{
+                                $("#div_option_b").show();
+                        	$('#option_b').html('<input type="radio" value="choice_b" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_b);
+                        }
+        
+        }
+        if (data.choice_c_image.search("NULL") == -1){
+                        $('#option_c').html('<input type="radio" value="choice_c" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_c_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_c == "" || data.question[0].choice_c == null ){
+                                $("#div_option_c").hide();
+                        }else{
+                                $("#div_option_c").show();
+                        	$('#option_c').html('<input type="radio" value="choice_c" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_c);
+                        }
+        
+        }
+        if (data.choice_d_image.search("NULL") == -1){
+                        $('#option_d').html('<input type="radio" value="choice_d" name="ans"><i></i>' + '<img style="padding-left:20px;" src="http://138.197.44.69:3000' + data.choice_d_image + '"/>');
+
+        }else{
+                        if (data.question[0].choice_d == "" || data.question[0].choice_d == null ){
+                                $("#div_option_d").hide();
+                        }else{
+                                $("#div_option_d").show();
+                                $('#option_d').html('<input type="radio" value="choice_d" name="ans"><i style="padding-left:10px;"></i>' + data.question[0].choice_d);
+                        }
+        
+        }
+			
+			MathJax.Hub.Queue(["Typeset", MathJax.Hub, "radio_group"]);
+
+  			$('input[type=radio][name=ans]').change(function() {
+    			if (answer_ret == $("input[name='ans']:checked").val()){ $('#good').show(); $('#bad').hide();}
+    			if (answer_ret != $("input[name='ans']:checked").val()){ $('#bad').show(); $('#good').hide();}  
+                $.ajax({
+                url: "http://138.197.44.69:3000/api/v1/results/student_guess/" + data.question[0].id + "/" + $("input[name='ans']:checked").val(),
+                headers: {"Authorization": localStorage.activation_token}
+                });
+  			});
+
+  			$( "#solution_view" ).click(function() {
+    			$('#location').html(data.question[0].solution);
+    			MathJax.Hub.Queue(["Typeset", MathJax.Hub, "location"]);
+				});
+		}
+		});
+  });
+
+});
+</script>
+</body>
+
+</html>
